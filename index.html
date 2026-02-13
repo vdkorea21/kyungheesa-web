@@ -30,7 +30,7 @@
             const container = document.getElementById('prop-container');
             
             try {
-                const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+                const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash-latest" });
                 const prompt = "Create 4 poetic and warm descriptions for aesthetic props found in a Seoul gift shop named 'KYUNG HEE SA'. Return as a JSON array of objects with 'title' and 'description'. Focus on themes of warmth, Korean history, and small daily happiness. Please answer in Korean.";
 
                 const result = await model.generateContent(prompt);
