@@ -9,88 +9,210 @@
     <style>
         body { font-family: 'Montserrat', sans-serif; background-color: #fdfaf6; scroll-behavior: smooth; }
         h1, h2, h3, .font-serif { font-family: 'Playfair Display', serif; }
-        /* AI Studio에서 보던 그 배경 이미지 설정 */
-        .hero-section { 
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1578991624414-276ef23a534f?q=80&w=2000');
-            background-size: cover; background-position: center; height: 80vh;
+        
+        /* 슬라이더 스타일 */
+        .slider-container { position: relative; height: 90vh; overflow: hidden; }
+        .slide { 
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+            opacity: 0; transition: opacity 1.5s ease-in-out; 
+            background-size: cover; background-position: center;
+            display: flex; align-items: center; justify-content: center;
         }
+        .slide.active { opacity: 1; }
+        .slide-overlay { 
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+            background: rgba(0,0,0,0.35); 
+        }
+        .slide-content { position: relative; z-index: 10; text-align: center; color: white; padding: 0 24px; }
+
+        /* 남대문 감성 섹션 배경 */
+        .specialty-section {
+            background: linear-gradient(rgba(253, 250, 246, 0.8), rgba(253, 250, 246, 0.8)), url('img/1.jpg');
+            background-size: cover; background-position: center; background-attachment: fixed;
+        }
+        .hidden-item { display: none; }
     </style>
 </head>
 <body class="text-stone-800">
 
     <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-stone-100 px-8 py-5 flex justify-between items-center">
         <h1 class="text-2xl font-serif font-bold tracking-tighter text-amber-900 cursor-pointer">KYUNG HEE SA</h1>
-        <div class="hidden md:flex space-x-10 text-xs uppercase tracking-widest font-semibold">
-            <a href="#" class="hover:text-amber-700 transition-colors">Home</a>
-            <a href="#stories" class="hover:text-amber-700 transition-colors">Prop Stories</a>
+        <div class="flex space-x-6 text-xs uppercase tracking-widest font-semibold">
+            <a href="#home" class="hover:text-amber-700">Home</a>
+            <a href="#stories" class="hover:text-amber-700">Stories</a>
+            <a href="#visit" class="hover:text-amber-700">Visit</a>
         </div>
     </nav>
 
-    <header class="hero-section flex items-center justify-center text-center text-white px-6">
-        <div class="animate-in fade-in slide-in-from-bottom duration-1000">
-            <span class="uppercase tracking-[0.4em] text-[10px] mb-4 block opacity-80">Seoul Hidden Sanctuary</span>
-            <h2 class="text-6xl md:text-8xl font-serif mb-6 italic font-light">A Warm Encounter</h2>
-            <p class="max-w-xl mx-auto text-lg font-light leading-relaxed opacity-90">당신의 일상을 따뜻하게 채워줄 경희사의 기록들</p>
+    <header id="home" class="slider-container">
+        <div class="slide active" style="background-image: url('img/1.jpg');">
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+                <span class="uppercase tracking-[0.4em] text-xs mb-4 block opacity-80">Since 1960, Namdaemun Market</span>
+                <h2 class="text-6xl md:text-8xl font-serif mb-6 italic font-light">A Warm Encounter</h2>
+                <p class="max-w-xl mx-auto text-lg font-light leading-relaxed opacity-90">“Stories from KYUNG HEE SA to Warm Your Everyday Life.”</p>
+            </div>
+        </div>
+        <div class="slide" style="background-image: url('img/2.jpg');">
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+                <span class="uppercase tracking-[0.4em] text-xs mb-4 block opacity-80">Carefully Curated</span>
+                <h2 class="text-6xl md:text-8xl font-serif mb-6 italic font-light">The Beauty of Korea</h2>
+                <p class="max-w-xl mx-auto text-lg font-light leading-relaxed opacity-90">The most authentic Korean aesthetics, interpreted with a contemporary touch</p>
+            </div>
+        </div>
+        <div class="slide" style="background-image: url('img/3.jpg');">
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+                <span class="uppercase tracking-[0.4em] text-xs mb-4 block opacity-80">Heart of Seoul</span>
+                <h2 class="text-6xl md:text-8xl font-serif mb-6 italic font-light">Your Daily Sanctuary</h2>
+                <p class="max-w-xl mx-auto text-lg font-light leading-relaxed opacity-90">A peaceful retreat in the heart of Namdaemun Market</p>
+            </div>
         </div>
     </header>
 
-    <section id="stories" class="py-32 px-6 max-w-6xl mx-auto">
-        <div class="text-center mb-20">
-            <h2 class="text-4xl font-serif text-amber-900 mb-4 italic text-center">Prop Stories</h2>
-            <div class="w-16 h-[1px] bg-amber-200 mx-auto mb-6"></div>
-            <p class="text-stone-400 uppercase tracking-widest text-[10px]">AI가 들려주는 소품의 의미</p>
+    <section class="specialty-section py-32 px-6">
+        <div class="max-w-4xl mx-auto text-center bg-white/40 p-12 backdrop-blur-sm rounded-sm">
+            <h2 class="text-4xl font-serif text-amber-900 mb-8 italic">Our Specialty</h2>
+            <div class="w-16 h-[1px] bg-amber-900/30 mx-auto my-5"></div>
+            <p class="text-stone-700 leading-[2.2] font-medium text-lg">
+                In the lively air of Namdaemun, we discovered moments of stillness<br>
+                Kyunghee-sa is not simply about objects— <br>
+               it is about offering timeless values that endure beyond passing trends
+            </p>
         </div>
-        
-        <div id="status-msg" class="text-center py-20 text-stone-400 animate-pulse">
-            경희사의 따뜻한 이야기를 불러오는 중입니다...
-        </div>
-
-        <div id="prop-container" class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-24"></div>
     </section>
 
-    <footer class="bg-stone-50 py-20 px-6 border-t border-stone-100 text-center">
-        <h2 class="text-xl font-serif text-amber-900 mb-4 italic">KYUNG HEE SA</h2>
-        <p class="text-[10px] text-stone-400 uppercase tracking-[0.3em]">&copy; 2026 KYUNG HEE SA. All Rights Reserved.</p>
+    <section id="stories" class="py-32 px-6 max-w-6xl mx-auto">
+        <div class="text-center mb-20">
+            <h2 class="text-4xl font-serif text-amber-900 mb-4 italic">Prop Stories</h2>
+            <div class="w-16 h-[1px] bg-amber-900/30 mx-auto my-5"></div>
+            <p class="text-stone-400 uppercase tracking-widest text-[15px]">Thoughtfully curated pieces, selected with care</p>
+        </div>
+
+        <div id="story-grid" class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div class="story-item group">
+                <div class="aspect-[3/4] bg-stone-100 mb-6 overflow-hidden"><img src="img/fan.png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"></div>
+                <h3 class="text-xl font-serif italic mb-2">example fan</h3>
+                <p class="text-sm text-stone-500 font-light leading-relaxed">Lorem ipsum dolor sit amet.</p>
+            </div>
+            <div class="story-item group">
+                <div class="aspect-[3/4] bg-stone-100 mb-6 overflow-hidden"><img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=500" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"></div>
+                <h3 class="text-xl font-serif italic mb-2">세월의 목제함</h3>
+                <p class="text-sm text-stone-500 font-light leading-relaxed">Lorem ipsum dolor sit amet.</p>
+            </div>
+            <div class="story-item group">
+                <div class="aspect-[3/4] bg-stone-100 mb-6 overflow-hidden"><img src="https://images.unsplash.com/photo-1618220179428-22790b461013?w=500" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"></div>
+                <h3 class="text-xl font-serif italic mb-2">수작업 유리병</h3>
+                <p class="text-sm text-stone-500 font-light leading-relaxed">Lorem ipsum dolor sit amet.</p>
+            </div>
+            <div class="story-item hidden-item group">
+                <div class="aspect-[3/4] bg-stone-100 mb-6 overflow-hidden"><img src="https://images.unsplash.com/photo-1544411047-c4915842273b?w=500" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"></div>
+                <h3 class="text-xl font-serif italic mb-2">전통 매듭 노리개</h3>
+                <p class="text-sm text-stone-500 font-light leading-relaxed">Lorem ipsum dolor sit amet.</p>
+            </div>
+            <div class="story-item hidden-item group">
+                <div class="aspect-[3/4] bg-stone-100 mb-6 overflow-hidden"><img src="https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?w=500" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"></div>
+                <h3 class="text-xl font-serif italic mb-2">황동 촛대</h3>
+                <p class="text-sm text-stone-500 font-light leading-relaxed">Lorem ipsum dolor sit amet.</p>
+            </div>
+            <div class="story-item hidden-item group">
+                <div class="aspect-[3/4] bg-stone-100 mb-6 overflow-hidden"><img src="https://images.unsplash.com/photo-1602872030219-3fd6380393c0?w=500" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"></div>
+                <h3 class="text-xl font-serif italic mb-2">청자 찻잔 세트</h3>
+                <p class="text-sm text-stone-500 font-light leading-relaxed">Lorem ipsum dolor sit amet.</p>
+            </div>
+        </div>
+
+        <div class="text-center mt-16">
+            <button id="show-more-btn" onclick="toggleItems()" class="px-10 py-3 border border-stone-800 text-xs uppercase tracking-widest hover:bg-stone-900 hover:text-white transition-all">Show More</button>
+        </div>
+    </section>
+
+    <section class="py-32 px-6 bg-[#fdfaf6]">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-20 text-stone-800">
+                <h2 class="text-4xl font-serif mb-4 italic text-center text-amber-900">The KYUNG HEE SA Essence</h2>
+                <div class="w-16 h-[1px] bg-amber-900/30 mx-auto my-5"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="text-left group">
+                    <span class="text-amber-900/10 font-serif text-5xl mb-6 block font-light group-hover:text-amber-600 transition-colors">01</span>
+                    <h3 class="text-xl font-serif text-stone-900 mb-4 italic">Heartfelt Curation</h3>
+                    <p class="text-stone-600 text-sm leading-[1.8] font-light">Each item is handpicked with love, focusing on craftsmanship and the emotions it evokes. We seek beauty in the overlooked.</p>
+                </div>
+                <div class="text-left group">
+                    <span class="text-amber-900/10 font-serif text-5xl mb-6 block font-light group-hover:text-amber-600 transition-colors">02</span>
+                    <h3 class="text-xl font-serif text-stone-900 mb-4 italic">Warm Sanctuary</h3>
+                    <p class="text-stone-600 text-sm leading-[1.8] font-light">Our space is designed to be a refuge where you can breathe slowly and find peace. A soft light in the heart of Namdaemun.</p>
+                </div>
+                <div class="text-left group">
+                    <span class="text-amber-900/10 font-serif text-5xl mb-6 block font-light group-hover:text-amber-600 transition-colors">03</span>
+                    <h3 class="text-xl font-serif text-stone-900 mb-4 italic">A Sense of Place</h3>
+                    <p class="text-stone-600 text-sm leading-[1.8] font-light">Deeply rooted in the market's history, we blend traditional Korean aesthetics with modern poetic sensibilities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="visit" class="py-32 bg-stone-100 px-6">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row gap-16 items-center">
+            <div class="md:w-1/2">
+                <h2 class="text-4xl font-serif text-amber-900 mb-8 italic">How to Find Us</h2>
+                <div class="space-y-6 text-sm text-stone-600 leading-relaxed">
+                    <p>
+                        <strong class="font-eng uppercase tracking-widest text-[10px] text-stone-400">Address</strong> <br> 
+                        1F 5-6, Daedo General Market D-Dong, 9 Namdaemunsijang 4-gil, Jung-gu, Seoul, Republic of Korea
+                    </p>
+                    <p>
+                        <strong class="font-eng uppercase tracking-widest text-[10px] text-stone-400">Contact</strong> <br> 
+                        Tel: +82 2-754-8549 <br> Mobile: +82 10-2783-0547
+                    </p>
+                    <p>
+                        <strong class="font-eng uppercase tracking-widest text-[10px] text-stone-400">Opening Hours</strong> <br> 
+                        Mon — Sat | 9:00 AM — 05:00 PM (Closed on Sundays)
+                    </p>
+                    <p class="italic text-amber-800 pt-4">"Located near Exit 5 of Hoehyeon Station, inside the warm heart of Namdaemun."</p>
+                </div>
+            </div>
+            <div class="md:w-1/2 w-full h-[400px] bg-stone-200 rounded-sm overflow-hidden">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.839841808647!2d126.975416576801!3d37.558836572040924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca2f427f7f9fd%3A0x9597143922f5f9fd!2z64Ko64yA66y47Iuc7J6l!5e0!3m2!1sko!2skr!4v1710000000000!5m2!1sko!2skr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-stone-900 text-stone-400 py-16 px-6 text-center">
+        <h2 class="text-xl font-serif text-stone-100 mb-4 italic font-bold">KYUNG HEE SA</h2>
+        <p class="text-[10px] uppercase tracking-[0.3em]">© 2026 KYUNG HEE SA. All Rights Reserved.</p>
     </footer>
 
-    <script type="module">
-        import { GoogleGenerativeAI } from "https://esm.run/@google/generative-ai";
+    <script>
+        // 배너 슬라이더 스크립트
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
 
-        // 1. 여기에 본인의 API 키를 넣으세요!
-        const API_KEY = "AIzaSyAeh9vZyex7zIkDW79UaxFwv8qNJW5fhlE"; 
-        const genAI = new GoogleGenerativeAI(API_KEY);
-
-        async function loadStories() {
-            const container = document.getElementById('prop-container');
-            const status = document.getElementById('status-msg');
-            
-            try {
-                // 모델명을 gemini-pro로 하면 404 에러가 안 납니다.
-                const model = genAI.getGenerativeModel({ model: "gemini-pro" });
-                const prompt = "Seoul Namdaemun gift shop 'KYUNG HEE SA'. Describe 4 aesthetic props poetically. Return ONLY a JSON array of 4 objects with 'title' and 'description'. Korean language.";
-
-                const result = await model.generateContent(prompt);
-                const text = result.response.text();
-                const jsonStr = text.match(/\[.*\]/s)[0];
-                const data = JSON.parse(jsonStr);
-
-                status.style.display = 'none'; // 성공하면 로딩 문구 삭제
-                container.innerHTML = data.map(item => `
-                    <div class="group cursor-default">
-                        <div class="aspect-[4/5] bg-stone-100 mb-8 overflow-hidden rounded-sm relative">
-                            <img src="https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?q=80&w=800" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
-                        </div>
-                        <h3 class="text-2xl font-serif mb-4 italic text-stone-900 border-b border-stone-100 pb-2 inline-block">${item.title}</h3>
-                        <p class="text-stone-500 leading-relaxed font-light text-sm md:text-base">${item.description}</p>
-                    </div>
-                `).join('');
-
-            } catch (e) {
-                console.error(e);
-                status.innerHTML = "<p class='text-red-400'>연결에 문제가 있습니다. API 키를 확인해 주세요.</p>";
-            }
+        function nextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
         }
-        loadStories();
+
+        // 4초마다 다음 슬라이드로 전환
+        setInterval(nextSlide, 4000);
+
+        // 기존 토글 함수
+        function toggleItems() {
+            const hiddenItems = document.querySelectorAll('.hidden-item');
+            const btn = document.getElementById('show-more-btn');
+            hiddenItems.forEach(item => {
+                if (item.style.display === 'block') {
+                    item.style.display = 'none';
+                    btn.innerText = 'Show More';
+                } else {
+                    item.style.display = 'block';
+                    btn.innerText = 'Show Less';
+                }
+            });
+        }
     </script>
 </body>
 </html>
