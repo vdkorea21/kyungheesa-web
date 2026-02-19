@@ -3,14 +3,23 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>KYUNG HEE SA | 남대문의 따뜻한 소품샵</title>
+    <title>KYUNG HEE SA | KOREA NAMDAEMUN SOUVENIR SHOP</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="img/po.png" type="image/x-icon">
     <style>
-        body { font-family: 'Montserrat', sans-serif; background-color: #fdfaf6; scroll-behavior: smooth; }
-        h1, h2, h3, .font-serif { font-family: 'Playfair Display', serif; }
+        /* 직관적인 가독성을 위해 베이스 폰트 웨이트 상향 */
+        body { 
+            font-family: 'Montserrat', sans-serif; 
+            background-color: #fdfaf6; 
+            scroll-behavior: smooth; 
+            font-weight: 500; /* 기본 글자 두께 강화 */
+        }
+        h1, h2, h3, .font-serif { 
+            font-family: 'Playfair Display', serif; 
+            font-weight: 700; 
+        }
         
-        /* 슬라이더 스타일 */
         .slider-container { position: relative; height: 90vh; overflow: hidden; }
         .slide { 
             position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
@@ -21,13 +30,12 @@
         .slide.active { opacity: 1; }
         .slide-overlay { 
             position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
-            background: rgba(0,0,0,0.35); 
+            background: rgba(0,0,0,0.45); /* 배경 대비 강화 */
         }
         .slide-content { position: relative; z-index: 10; text-align: center; color: white; padding: 0 24px; }
 
-        /* 남대문 감성 섹션 배경 */
         .specialty-section {
-            background: linear-gradient(rgba(253, 250, 246, 0.8), rgba(253, 250, 246, 0.8)), url('img/1.jpg');
+            background: linear-gradient(rgba(253, 250, 246, 0.88), rgba(253, 250, 246, 0.88)), url('img/1.jpg');
             background-size: cover; background-position: center; background-attachment: fixed;
         }
         .hidden-item { display: none; }
@@ -35,12 +43,12 @@
 </head>
 <body class="text-stone-800">
 
-    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-stone-100 px-8 py-5 flex justify-between items-center">
-        <h1 class="text-2xl font-serif font-bold tracking-tighter text-amber-900 cursor-pointer">KYUNG HEE SA</h1>
-        <div class="flex space-x-6 text-xs uppercase tracking-widest font-semibold">
-            <a href="#home" class="hover:text-amber-700">Home</a>
-            <a href="#stories" class="hover:text-amber-700">Stories</a>
-            <a href="#visit" class="hover:text-amber-700">Visit</a>
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-stone-200 px-8 py-5 flex justify-between items-center">
+        <h1 class="text-2xl font-serif font-extrabold tracking-tighter text-amber-900 cursor-pointer">KYUNG HEE SA</h1>
+        <div class="flex space-x-6 text-xs uppercase tracking-[0.2em] font-bold">
+            <a href="#home" class="hover:text-amber-700 transition-colors">Home</a>
+            <a href="#stories" class="hover:text-amber-700 transition-colors">Stories</a>
+            <a href="#visit" class="hover:text-amber-700 transition-colors">Visit</a>
         </div>
     </nav>
 
@@ -48,107 +56,122 @@
         <div class="slide active" style="background-image: url('img/1.jpg');">
             <div class="slide-overlay"></div>
             <div class="slide-content">
-                <span class="uppercase tracking-[0.4em] text-xs mb-4 block opacity-80">Since 1960, Namdaemun Market</span>
-                <h2 class="text-6xl md:text-8xl font-serif mb-6 italic font-light">A Warm Encounter</h2>
-                <p class="max-w-xl mx-auto text-lg font-light leading-relaxed opacity-90">“Stories from KYUNG HEE SA to Warm Your Everyday Life.”</p>
+                <span class="uppercase tracking-[0.5em] text-sm mb-4 block font-bold opacity-100 text-amber-200">Since 1960, Namdaemun Market</span>
+                <h2 class="text-6xl md:text-8xl font-serif mb-6 italic font-medium">A Warm Encounter</h2>
+                <p class="max-w-xl mx-auto text-xl font-semibold leading-relaxed">“Stories from KYUNG HEE SA to Warm Your Everyday Life.”</p>
             </div>
         </div>
         <div class="slide" style="background-image: url('img/2.jpg');">
             <div class="slide-overlay"></div>
             <div class="slide-content">
-                <span class="uppercase tracking-[0.4em] text-xs mb-4 block opacity-80">Carefully Curated</span>
-                <h2 class="text-6xl md:text-8xl font-serif mb-6 italic font-light">The Beauty of Korea</h2>
-                <p class="max-w-xl mx-auto text-lg font-light leading-relaxed opacity-90">The most authentic Korean aesthetics, interpreted with a contemporary touch</p>
+                <span class="uppercase tracking-[0.5em] text-sm mb-4 block font-bold text-amber-200">Carefully Curated</span>
+                <h2 class="text-6xl md:text-8xl font-serif mb-6 italic font-medium">The Beauty of Korea</h2>
+                <p class="max-w-xl mx-auto text-xl font-semibold leading-relaxed">The most authentic Korean aesthetics, interpreted with a contemporary touch</p>
             </div>
         </div>
         <div class="slide" style="background-image: url('img/3.jpg');">
             <div class="slide-overlay"></div>
             <div class="slide-content">
-                <span class="uppercase tracking-[0.4em] text-xs mb-4 block opacity-80">Heart of Seoul</span>
-                <h2 class="text-6xl md:text-8xl font-serif mb-6 italic font-light">Your Daily Sanctuary</h2>
-                <p class="max-w-xl mx-auto text-lg font-light leading-relaxed opacity-90">A peaceful retreat in the heart of Namdaemun Market</p>
+                <span class="uppercase tracking-[0.5em] text-sm mb-4 block font-bold text-amber-200">Heart of Seoul</span>
+                <h2 class="text-6xl md:text-8xl font-serif mb-6 italic font-medium">Your Daily Sanctuary</h2>
+                <p class="max-w-xl mx-auto text-xl font-semibold leading-relaxed">A peaceful retreat in the heart of Namdaemun Market</p>
             </div>
         </div>
     </header>
 
     <section class="specialty-section py-32 px-6">
-        <div class="max-w-4xl mx-auto text-center bg-white/40 p-12 backdrop-blur-sm rounded-sm">
-            <h2 class="text-4xl font-serif text-amber-900 mb-8 italic">Our Specialty</h2>
-            <div class="w-16 h-[1px] bg-amber-900/30 mx-auto my-5"></div>
-            <p class="text-stone-700 leading-[2.2] font-medium text-lg">
+        <div class="max-w-4xl mx-auto text-center bg-white/70 p-12 backdrop-blur-md rounded-sm shadow-sm border border-stone-100">
+            <h2 class="text-4xl font-serif text-amber-900 mb-8 italic font-bold">Our Specialty</h2>
+            <div class="w-16 h-[2px] bg-amber-900/50 mx-auto my-5"></div>
+            <p class="text-stone-900 leading-[2.2] font-bold text-lg md:text-xl">
                 In the lively air of Namdaemun, we discovered moments of stillness<br>
                 Kyunghee-sa is not simply about objects— <br>
-               it is about offering timeless values that endure beyond passing trends
+                it is about offering timeless values that endure beyond passing trends
             </p>
         </div>
     </section>
 
     <section id="stories" class="py-32 px-6 max-w-6xl mx-auto">
         <div class="text-center mb-20">
-            <h2 class="text-4xl font-serif text-amber-900 mb-4 italic">Prop Stories</h2>
-            <div class="w-16 h-[1px] bg-amber-900/30 mx-auto my-5"></div>
-            <p class="text-stone-400 uppercase tracking-widest text-[15px]">Thoughtfully curated pieces, selected with care</p>
+            <h2 class="text-4xl font-serif text-amber-900 mb-4 italic font-bold">Prop Stories</h2>
+            <div class="w-16 h-[2px] bg-amber-900/40 mx-auto my-5"></div>
+            <p class="text-stone-600 uppercase tracking-widest text-[15px] font-bold">Thoughtfully curated pieces, selected with care</p>
         </div>
 
         <div id="story-grid" class="grid grid-cols-1 md:grid-cols-3 gap-12">
             <div class="story-item group">
-                <div class="aspect-[3/4] bg-stone-100 mb-6 overflow-hidden"><img src="img/fan.png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"></div>
-                <h3 class="text-xl font-serif italic mb-2">example fan</h3>
-                <p class="text-sm text-stone-500 font-light leading-relaxed">Lorem ipsum dolor sit amet.</p>
+                <div class="aspect-[3/4] bg-stone-100 mb-6 overflow-hidden"><img src="img/box.png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"></div>
+                <h3 class="text-xl font-serif italic mb-2 font-bold text-stone-900">Korean mother-of-pearl jewelry box</h3>
+                <p class="text-sm text-stone-600 font-semibold leading-relaxed">A traditional Korean folding fan crafted with elegant artistry, blending heritage, beauty, and timeless charm.</p>
             </div>
             <div class="story-item group">
-                <div class="aspect-[3/4] bg-stone-100 mb-6 overflow-hidden"><img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=500" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"></div>
-                <h3 class="text-xl font-serif italic mb-2">세월의 목제함</h3>
-                <p class="text-sm text-stone-500 font-light leading-relaxed">Lorem ipsum dolor sit amet.</p>
+                <div class="aspect-[3/4] bg-stone-100 mb-6 overflow-hidden"><img src="img/apron.png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"></div>
+                <h3 class="text-xl font-serif italic mb-2 font-bold text-stone-900">Home life style apron</h3>
+                <p class="text-sm text-stone-600 font-semibold leading-relaxed">Creates an effortlessly aesthetic mood that blends naturally into everyday life.</p>
             </div>
             <div class="story-item group">
-                <div class="aspect-[3/4] bg-stone-100 mb-6 overflow-hidden"><img src="https://images.unsplash.com/photo-1618220179428-22790b461013?w=500" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"></div>
-                <h3 class="text-xl font-serif italic mb-2">수작업 유리병</h3>
-                <p class="text-sm text-stone-500 font-light leading-relaxed">Lorem ipsum dolor sit amet.</p>
+                <div class="aspect-[3/4] bg-stone-100 mb-6 overflow-hidden"><img src="img/magnet.png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"></div>
+                <h3 class="text-xl font-serif italic mb-2 font-bold text-stone-900">Traditional Korean 3D Magnet</h3>
+                <p class="text-sm text-stone-600 font-semibold leading-relaxed">A beautifully crafted 3D magnet featuring iconic Korean cultural elements.</p>
             </div>
             <div class="story-item hidden-item group">
-                <div class="aspect-[3/4] bg-stone-100 mb-6 overflow-hidden"><img src="https://images.unsplash.com/photo-1544411047-c4915842273b?w=500" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"></div>
-                <h3 class="text-xl font-serif italic mb-2">전통 매듭 노리개</h3>
-                <p class="text-sm text-stone-500 font-light leading-relaxed">Lorem ipsum dolor sit amet.</p>
+                <div class="aspect-[3/4] bg-stone-100 mb-6 overflow-hidden"><img src="img/kiring (3).png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"></div>
+                <h3 class="text-xl font-serif italic mb-2 font-bold text-stone-900">Memory Keyring Collection</h3>
+                <p class="text-sm text-stone-600 font-semibold leading-relaxed">A charming collection capturing the beauty and memories of Korea.</p>
             </div>
             <div class="story-item hidden-item group">
-                <div class="aspect-[3/4] bg-stone-100 mb-6 overflow-hidden"><img src="https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?w=500" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"></div>
-                <h3 class="text-xl font-serif italic mb-2">황동 촛대</h3>
-                <p class="text-sm text-stone-500 font-light leading-relaxed">Lorem ipsum dolor sit amet.</p>
+                <div class="aspect-[3/4] bg-stone-100 mb-6 overflow-hidden"><img src="img/bts.png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"></div>
+                <h3 class="text-xl font-serif italic mb-2 font-bold text-stone-900">K-Pop BTS Key Ring Souvenir</h3>
+                <p class="text-sm text-stone-600 font-semibold leading-relaxed">A stylish key ring inspired by global K-pop sensation BTS.</p>
             </div>
             <div class="story-item hidden-item group">
-                <div class="aspect-[3/4] bg-stone-100 mb-6 overflow-hidden"><img src="https://images.unsplash.com/photo-1602872030219-3fd6380393c0?w=500" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"></div>
-                <h3 class="text-xl font-serif italic mb-2">청자 찻잔 세트</h3>
-                <p class="text-sm text-stone-500 font-light leading-relaxed">Lorem ipsum dolor sit amet.</p>
+                <div class="aspect-[3/4] bg-stone-100 mb-6 overflow-hidden"><img src="img/bag.png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"></div>
+                <h3 class="text-xl font-serif italic mb-2 font-bold text-stone-900">Korean-style Pouch Handbag</h3>
+                <p class="text-sm text-stone-600 font-semibold leading-relaxed">A traditional Korean-style pouch handbag inspired by han복 designs.</p>
+            </div>
+            <div class="story-item hidden-item group">
+                <div class="aspect-[3/4] bg-stone-100 mb-6 overflow-hidden"><img src="img/spoon.png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"></div>
+                <h3 class="text-xl font-serif italic mb-2 font-bold text-stone-900">Traditional Korean Dining Set</h3>
+                <p class="text-sm text-stone-600 font-semibold leading-relaxed">A traditional Korean spoon and chopsticks set for everyday dining.</p>
+            </div>
+            <div class="story-item hidden-item group">
+                <div class="aspect-[3/4] bg-stone-100 mb-6 overflow-hidden"><img src="img/bi.png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"></div>
+                <h3 class="text-xl font-serif italic mb-2 font-bold text-stone-900">Binyeo (Traditional Hairpin)</h3>
+                <p class="text-sm text-stone-600 font-semibold leading-relaxed">An elegant accessory representing Korean beauty and tradition.</p>
+            </div>
+            <div class="story-item hidden-item group">
+                <div class="aspect-[3/4] bg-stone-100 mb-6 overflow-hidden"><img src="img/plate.png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"></div>
+                <h3 class="text-xl font-serif italic mb-2 font-bold text-stone-900">Korean Souvenir Plate</h3>
+                <p class="text-sm text-stone-600 font-semibold leading-relaxed">A decorative plate featuring traditional Korean designs.</p>
             </div>
         </div>
 
         <div class="text-center mt-16">
-            <button id="show-more-btn" onclick="toggleItems()" class="px-10 py-3 border border-stone-800 text-xs uppercase tracking-widest hover:bg-stone-900 hover:text-white transition-all">Show More</button>
+            <button id="show-more-btn" onclick="toggleItems()" class="px-10 py-3 border-2 border-stone-800 text-xs uppercase tracking-widest font-bold hover:bg-stone-900 hover:text-white transition-all">Show More</button>
         </div>
     </section>
 
     <section class="py-32 px-6 bg-[#fdfaf6]">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-20 text-stone-800">
-                <h2 class="text-4xl font-serif mb-4 italic text-center text-amber-900">The KYUNG HEE SA Essence</h2>
-                <div class="w-16 h-[1px] bg-amber-900/30 mx-auto my-5"></div>
+                <h2 class="text-4xl font-serif mb-4 italic text-center text-amber-900 font-bold">The KYUNG HEE SA Essence</h2>
+                <div class="w-16 h-[2px] bg-amber-900/40 mx-auto my-5"></div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
                 <div class="text-left group">
-                    <span class="text-amber-900/10 font-serif text-5xl mb-6 block font-light group-hover:text-amber-600 transition-colors">01</span>
-                    <h3 class="text-xl font-serif text-stone-900 mb-4 italic">Heartfelt Curation</h3>
-                    <p class="text-stone-600 text-sm leading-[1.8] font-light">Each item is handpicked with love, focusing on craftsmanship and the emotions it evokes. We seek beauty in the overlooked.</p>
+                    <span class="text-amber-900/40 font-serif text-7xl mb-4 block font-extrabold group-hover:text-amber-600 transition-colors">01</span>
+                    <h3 class="text-2xl font-serif text-stone-900 mb-4 italic font-bold">Heartfelt Curation</h3>
+                    <p class="text-stone-700 text-sm leading-[1.8] font-semibold">Each item is handpicked with love, focusing on craftsmanship and the emotions it evokes.</p>
                 </div>
                 <div class="text-left group">
-                    <span class="text-amber-900/10 font-serif text-5xl mb-6 block font-light group-hover:text-amber-600 transition-colors">02</span>
-                    <h3 class="text-xl font-serif text-stone-900 mb-4 italic">Warm Sanctuary</h3>
-                    <p class="text-stone-600 text-sm leading-[1.8] font-light">Our space is designed to be a refuge where you can breathe slowly and find peace. A soft light in the heart of Namdaemun.</p>
+                    <span class="text-amber-900/40 font-serif text-7xl mb-4 block font-extrabold group-hover:text-amber-600 transition-colors">02</span>
+                    <h3 class="text-2xl font-serif text-stone-900 mb-4 italic font-bold">Warm Sanctuary</h3>
+                    <p class="text-stone-700 text-sm leading-[1.8] font-semibold">Our space is designed to be a refuge where you can breathe slowly and find peace.</p>
                 </div>
                 <div class="text-left group">
-                    <span class="text-amber-900/10 font-serif text-5xl mb-6 block font-light group-hover:text-amber-600 transition-colors">03</span>
-                    <h3 class="text-xl font-serif text-stone-900 mb-4 italic">A Sense of Place</h3>
-                    <p class="text-stone-600 text-sm leading-[1.8] font-light">Deeply rooted in the market's history, we blend traditional Korean aesthetics with modern poetic sensibilities.</p>
+                    <span class="text-amber-900/40 font-serif text-7xl mb-4 block font-extrabold group-hover:text-amber-600 transition-colors">03</span>
+                    <h3 class="text-2xl font-serif text-stone-900 mb-4 italic font-bold">A Sense of Place</h3>
+                    <p class="text-stone-700 text-sm leading-[1.8] font-semibold">Deeply rooted in history, we blend traditional aesthetics with modern sensibilities.</p>
                 </div>
             </div>
         </div>
@@ -157,49 +180,44 @@
     <section id="visit" class="py-32 bg-stone-100 px-6">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row gap-16 items-center">
             <div class="md:w-1/2">
-                <h2 class="text-4xl font-serif text-amber-900 mb-8 italic">How to Find Us</h2>
-                <div class="space-y-6 text-sm text-stone-600 leading-relaxed">
+                <h2 class="text-4xl font-serif text-amber-900 mb-8 italic font-bold">How to Find Us</h2>
+                <div class="space-y-6 text-sm text-stone-700 leading-relaxed font-semibold">
                     <p>
-                        <strong class="font-eng uppercase tracking-widest text-[10px] text-stone-400">Address</strong> <br> 
-                        1F 5-6, Daedo General Market D-Dong, 9 Namdaemunsijang 4-gil, Jung-gu, Seoul, Republic of Korea
+                        <strong class="uppercase tracking-widest text-xs text-stone-400 font-bold">Address</strong> <br> 
+                        1F 5-6, Daedo General Market D-Dong, 9 Namdaemunsijang 4-gil, Jung-gu, Seoul
                     </p>
                     <p>
-                        <strong class="font-eng uppercase tracking-widest text-[10px] text-stone-400">Contact</strong> <br> 
-                        Tel: +82 2-754-8549 <br> Mobile: +82 10-2783-0547
+                        <strong class="uppercase tracking-widest text-xs text-stone-400 font-bold">Contact</strong> <br> 
+                        Tel: +82 2-754-8549 | Mobile: +82 10-2783-0547
                     </p>
                     <p>
-                        <strong class="font-eng uppercase tracking-widest text-[10px] text-stone-400">Opening Hours</strong> <br> 
+                        <strong class="uppercase tracking-widest text-xs text-stone-400 font-bold">Opening Hours</strong> <br> 
                         Mon — Sat | 9:00 AM — 05:00 PM (Closed on Sundays)
                     </p>
-                    <p class="italic text-amber-800 pt-4">"Located near Exit 5 of Hoehyeon Station, inside the warm heart of Namdaemun."</p>
+                    <p class="italic text-amber-800 pt-4 font-bold text-base">"Located inside the warm heart of Namdaemun."</p>
                 </div>
             </div>
-            <div class="md:w-1/2 w-full h-[400px] bg-stone-200 rounded-sm overflow-hidden">
+            <div class="md:w-1/2 w-full h-[400px] bg-stone-200 rounded-sm overflow-hidden shadow-inner">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.839841808647!2d126.975416576801!3d37.558836572040924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca2f427f7f9fd%3A0x9597143922f5f9fd!2z64Ko64yA66y47Iuc7J6l!5e0!3m2!1sko!2skr!4v1710000000000!5m2!1sko!2skr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
     </section>
 
     <footer class="bg-stone-900 text-stone-400 py-16 px-6 text-center">
-        <h2 class="text-xl font-serif text-stone-100 mb-4 italic font-bold">KYUNG HEE SA</h2>
-        <p class="text-[10px] uppercase tracking-[0.3em]">© 2026 KYUNG HEE SA. All Rights Reserved.</p>
+        <h2 class="text-2xl font-serif text-stone-100 mb-4 italic font-bold">KYUNG HEE SA</h2>
+        <p class="text-[10px] uppercase tracking-[0.4em] font-bold">© 2026 KYUNG HEE SA. All Rights Reserved.</p>
     </footer>
 
     <script>
-        // 배너 슬라이더 스크립트
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slide');
-
         function nextSlide() {
             slides[currentSlide].classList.remove('active');
             currentSlide = (currentSlide + 1) % slides.length;
             slides[currentSlide].classList.add('active');
         }
+        setInterval(nextSlide, 4500);
 
-        // 4초마다 다음 슬라이드로 전환
-        setInterval(nextSlide, 4000);
-
-        // 기존 토글 함수
         function toggleItems() {
             const hiddenItems = document.querySelectorAll('.hidden-item');
             const btn = document.getElementById('show-more-btn');
