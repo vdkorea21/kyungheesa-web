@@ -52,30 +52,53 @@
         </div>
     </nav>
 
-    <header id="home" class="slider-container">
+<header id="home" class="slider-container flex items-center justify-center">
         <div class="slide active" style="background-image: url('img/khs.png');">
             <div class="slide-overlay"></div>
-            <div class="slide-content">
-                <span class="uppercase tracking-[0.5em] text-sm mb-4 block font-bold opacity-100 text-amber-200">Since 1960, Namdaemun Market</span>
-                <h2 class="text-6xl md:text-8xl font-serif mb-6 italic font-medium">A Warm Encounter</h2>
-                <p class="max-w-xl mx-auto text-xl font-semibold leading-relaxed">“Stories from KYUNG HEE SA to Warm Your Everyday Life.”</p>
-            </div>
         </div>
         <div class="slide" style="background-image: url('img/2.jpg');">
             <div class="slide-overlay"></div>
-            <div class="slide-content">
-                <span class="uppercase tracking-[0.5em] text-sm mb-4 block font-bold text-amber-200">Carefully Curated</span>
-                <h2 class="text-6xl md:text-8xl font-serif mb-6 italic font-medium">The Beauty of Korea</h2>
-                <p class="max-w-xl mx-auto text-xl font-semibold leading-relaxed">The most authentic Korean aesthetics, interpreted with a contemporary touch</p>
-            </div>
         </div>
-        <div class="slide" style="background-image: url('img/3.jpg');">
+        <div class="slide" style="background-image: url('img/b1.jpg');">
             <div class="slide-overlay"></div>
-            <div class="slide-content">
-                <span class="uppercase tracking-[0.5em] text-sm mb-4 block font-bold text-amber-200">Heart of Seoul</span>
-                <h2 class="text-6xl md:text-8xl font-serif mb-6 italic font-medium">Your Daily Sanctuary</h2>
-                <p class="max-w-xl mx-auto text-xl font-semibold leading-relaxed">A peaceful retreat in the heart of Namdaemun Market</p>
+        </div>
+
+        <div class="relative z-10 w-full max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
+            
+            <div class="md:w-1/2 text-white text-center md:text-left">
+                <span class="uppercase tracking-[0.5em] text-sm mb-4 block font-bold text-amber-200">Since 1960, Namdaemun Market</span>
+                <h2 class="text-5xl md:text-7xl font-serif mb-6 italic font-medium leading-tight">A Warm Encounter</h2>
+                <p class="text-xl font-semibold leading-relaxed opacity-90">“Stories from KYUNG HEE SA to Warm Your Everyday Life.”</p>
             </div>
+
+            <div class="md:w-1/2 w-full max-w-md">
+                <div class="bg-white/10 backdrop-blur-lg p-8 rounded-lg border border-white/20 shadow-2xl">
+                    <h3 class="text-white text-2xl font-serif italic mb-6 text-center">Inquiry</h3>
+                    
+                    <form action="https://formspree.io/f/kheetrade@gmail.com" method="POST" class="space-y-4">
+                        <div>
+                            <label class="block text-white text-xs uppercase tracking-widest mb-2 font-bold">Name</label>
+                            <input type="text" name="name" required placeholder="Your Name" 
+                                class="w-full bg-white/20 border border-white/30 rounded-sm px-4 py-2 text-white placeholder:text-stone-300 focus:outline-none focus:bg-white/30 transition-all">
+                        </div>
+                        <div>
+                            <label class="block text-white text-xs uppercase tracking-widest mb-2 font-bold">Email</label>
+                            <input type="email" name="_replyto" required placeholder="email@example.com" 
+                                class="w-full bg-white/20 border border-white/30 rounded-sm px-4 py-2 text-white placeholder:text-stone-300 focus:outline-none focus:bg-white/30 transition-all">
+                        </div>
+                        <div>
+                            <label class="block text-white text-xs uppercase tracking-widest mb-2 font-bold">Message</label>
+                            <textarea name="message" rows="3" required placeholder="How can we help you?" 
+                                class="w-full bg-white/20 border border-white/30 rounded-sm px-4 py-2 text-white placeholder:text-stone-300 focus:outline-none focus:bg-white/30 transition-all"></textarea>
+                        </div>
+                        <button type="submit" 
+                            class="w-full bg-amber-700 hover:bg-amber-600 text-white font-bold py-3 px-6 rounded-sm uppercase tracking-widest text-xs transition-colors mt-2">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+
         </div>
     </header>
 
@@ -127,7 +150,7 @@
             <div class="story-item hidden-item group">
                 <div class="aspect-[3/4] bg-stone-100 mb-6 overflow-hidden"><img src="img/bag.png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"></div>
                 <h3 class="text-xl font-serif italic mb-2 font-bold text-stone-900">Korean-style Pouch Handbag</h3>
-                <p class="text-sm text-stone-600 font-semibold leading-relaxed">A traditional Korean-style pouch handbag inspired by han복 designs.</p>
+                <p class="text-sm text-stone-600 font-semibold leading-relaxed">A traditional Korean-style pouch handbag inspired by Hanbok designs.</p>
             </div>
             <div class="story-item hidden-item group">
                 <div class="aspect-[3/4] bg-stone-100 mb-6 overflow-hidden"><img src="img/spoon.png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"></div>
