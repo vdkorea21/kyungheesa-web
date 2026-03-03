@@ -8,19 +8,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="icon" href="img/po.png" type="image/x-icon">
     <style>
-        /* 직관적인 가독성을 위해 베이스 폰트 웨이트 상향 */
         body { 
             font-family: 'Montserrat', sans-serif; 
             background-color: #fdfaf6; 
             scroll-behavior: smooth; 
-            font-weight: 500; /* 기본 글자 두께 강화 */
+            font-weight: 500; 
         }
         h1, h2, h3, .font-serif { 
             font-family: 'Playfair Display', serif; 
             font-weight: 700; 
         }
-        
-        .slider-container { position: relative; height: 90vh; overflow: hidden; }
+        .slider-container { position: relative; height: 95vh; overflow: hidden; }
         .slide { 
             position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
             opacity: 0; transition: opacity 1.5s ease-in-out; 
@@ -30,10 +28,8 @@
         .slide.active { opacity: 1; }
         .slide-overlay { 
             position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
-            background: rgba(0,0,0,0.45); /* 배경 대비 강화 */
+            background: rgba(0,0,0,0.5); 
         }
-        .slide-content { position: relative; z-index: 10; text-align: center; color: white; padding: 0 24px; }
-
         .specialty-section {
             background: linear-gradient(rgba(253, 250, 246, 0.88), rgba(253, 250, 246, 0.88)), url('img/1.jpg');
             background-size: cover; background-position: center; background-attachment: fixed;
@@ -45,68 +41,61 @@
 
     <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-stone-200 px-8 py-5 flex justify-between items-center">
         <h1 class="text-2xl font-serif font-extrabold tracking-tighter text-amber-900 cursor-pointer">KYUNG HEE SA</h1>
-        <div class="flex space-x-6 text-xs uppercase tracking-[0.2em] font-bold">
-            <a href="#home" class="hover:text-amber-700 transition-colors">Home</a>
-            <a href="#stories" class="hover:text-amber-700 transition-colors">Stories</a>
-            <a href="#visit" class="hover:text-amber-700 transition-colors">Visit</a>
+        <div class="flex items-center space-x-8">
+            <div class="hidden md:flex space-x-6 text-xs uppercase tracking-[0.2em] font-bold">
+                <a href="#home" class="lang-text hover:text-amber-700 transition-colors" data-ko="홈" data-en="Home">Home</a>
+                <a href="#stories" class="lang-text hover:text-amber-700 transition-colors" data-ko="스토리" data-en="Stories">Stories</a>
+                <a href="#visit" class="lang-text hover:text-amber-700 transition-colors" data-ko="방문안내" data-en="Visit">Visit</a>
+            </div>
+            <div class="flex border border-stone-300 rounded-full overflow-hidden text-[10px] font-bold shadow-sm">
+                <button onclick="setLanguage('ko')" id="btn-ko" class="px-3 py-1 transition-all">KO</button>
+                <button onclick="setLanguage('en')" id="btn-en" class="px-3 py-1 transition-all">EN</button>
+            </div>
         </div>
     </nav>
 
-<header id="home" class="slider-container flex items-center justify-center">
-        <div class="slide active" style="background-image: url('img/khs.png');">
-            <div class="slide-overlay"></div>
-        </div>
-        <div class="slide" style="background-image: url('img/2.jpg');">
-            <div class="slide-overlay"></div>
-        </div>
-        <div class="slide" style="background-image: url('img/b1.jpg');">
-            <div class="slide-overlay"></div>
-        </div>
+    <header id="home" class="slider-container flex items-center justify-center">
+        <div class="slide active" style="background-image: url('img/khs.png');"><div class="slide-overlay"></div></div>
+        <div class="slide" style="background-image: url('img/2.jpg');"><div class="slide-overlay"></div></div>
+        <div class="slide" style="background-image: url('img/b1.jpg');"><div class="slide-overlay"></div></div>
 
-        <div class="relative z-10 w-full max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
-            
+        <div class="relative z-10 w-full max-w-6xl mx-auto px-6 mt-20 flex flex-col md:flex-row items-center gap-12">
             <div class="md:w-1/2 text-white text-center md:text-left">
-                <span class="uppercase tracking-[0.5em] text-sm mb-4 block font-bold text-amber-200">Since 1960, Namdaemun Market</span>
-                <h2 class="text-5xl md:text-7xl font-serif mb-6 italic font-medium leading-tight">A Warm Encounter</h2>
-                <p class="text-xl font-semibold leading-relaxed opacity-90">“Stories from KYUNG HEE SA to Warm Your Everyday Life.”</p>
+                <span class="lang-text uppercase tracking-[0.5em] text-sm mb-4 block font-bold text-amber-200" data-ko="1960년부터 이어온 남대문 시장의 전통" data-en="Since 1960, Namdaemun Market">Since 1960, Namdaemun Market</span>
+                <h2 class="lang-text text-5xl md:text-7xl font-serif mb-6 italic font-medium leading-tight" data-ko="따뜻한 만남" data-en="A Warm Encounter">A Warm Encounter</h2>
+                <p class="lang-text text-xl font-semibold leading-relaxed opacity-90" data-ko="“당신의 일상을 따뜻하게 채우는 경희사의 이야기.”" data-en="“Stories from KYUNG HEE SA to Warm Your Everyday Life.”">“Stories from KYUNG HEE SA to Warm Your Everyday Life.”</p>
             </div>
 
             <div class="md:w-1/2 w-full max-w-md">
-                <div class="bg-white/10 backdrop-blur-lg p-8 rounded-lg border border-white/20 shadow-2xl">
-                    <h3 class="text-white text-2xl font-serif italic mb-6 text-center">Inquiry</h3>
-                    
+                <div class="bg-black/20 backdrop-blur-xl p-8 rounded-sm border border-white/20 shadow-2xl">
+                    <h3 class="lang-text text-white text-2xl font-serif italic mb-6 text-center" data-ko="문의하기" data-en="Inquiry">Inquiry</h3>
                     <form action="https://formspree.io/f/kheetrade@gmail.com" method="POST" class="space-y-4">
                         <div>
-                            <label class="block text-white text-xs uppercase tracking-widest mb-2 font-bold">Name</label>
-                            <input type="text" name="name" required placeholder="Your Name" 
-                                class="w-full bg-white/20 border border-white/30 rounded-sm px-4 py-2 text-white placeholder:text-stone-300 focus:outline-none focus:bg-white/30 transition-all">
+                            <label class="lang-text block text-white text-xs uppercase tracking-widest mb-2 font-bold" data-ko="이름" data-en="Name">Name</label>
+                            <input type="text" name="name" required class="w-full bg-white/10 border border-white/20 rounded-sm px-4 py-2 text-white focus:outline-none focus:bg-white/20 transition-all">
                         </div>
                         <div>
-                            <label class="block text-white text-xs uppercase tracking-widest mb-2 font-bold">Email</label>
-                            <input type="email" name="_replyto" required placeholder="email@example.com" 
-                                class="w-full bg-white/20 border border-white/30 rounded-sm px-4 py-2 text-white placeholder:text-stone-300 focus:outline-none focus:bg-white/30 transition-all">
+                            <label class="lang-text block text-white text-xs uppercase tracking-widest mb-2 font-bold" data-ko="이메일" data-en="Email">Email</label>
+                            <input type="email" name="_replyto" required class="w-full bg-white/10 border border-white/20 rounded-sm px-4 py-2 text-white focus:outline-none focus:bg-white/20 transition-all">
                         </div>
                         <div>
-                            <label class="block text-white text-xs uppercase tracking-widest mb-2 font-bold">Message</label>
-                            <textarea name="message" rows="3" required placeholder="How can we help you?" 
-                                class="w-full bg-white/20 border border-white/30 rounded-sm px-4 py-2 text-white placeholder:text-stone-300 focus:outline-none focus:bg-white/30 transition-all"></textarea>
+                            <label class="lang-text block text-white text-xs uppercase tracking-widest mb-2 font-bold" data-ko="문의사항" data-en="Message">Message</label>
+                            <textarea name="message" rows="3" required class="w-full bg-white/10 border border-white/20 rounded-sm px-4 py-2 text-white focus:outline-none focus:bg-white/20 transition-all"></textarea>
                         </div>
-                        <button type="submit" 
-                            class="w-full bg-amber-700 hover:bg-amber-600 text-white font-bold py-3 px-6 rounded-sm uppercase tracking-widest text-xs transition-colors mt-2">
-                            Send Message
-                        </button>
+                        <button type="submit" class="lang-text w-full bg-amber-800 hover:bg-amber-700 text-white font-bold py-3 px-6 rounded-sm uppercase tracking-widest text-xs transition-colors mt-2" data-ko="메시지 보내기" data-en="Send Message">Send Message</button>
                     </form>
                 </div>
             </div>
-
         </div>
     </header>
 
     <section class="specialty-section py-32 px-6">
-        <div class="max-w-4xl mx-auto text-center bg-white/70 p-12 backdrop-blur-md rounded-sm shadow-sm border border-stone-100">
-            <h2 class="text-4xl font-serif text-amber-900 mb-8 italic font-bold">Our Specialty</h2>
+        <div class="max-w-4xl mx-auto text-center bg-white/70 p-12 backdrop-blur-md rounded-sm border border-stone-100">
+            <h2 class="lang-text text-4xl font-serif text-amber-900 mb-8 italic font-bold" data-ko="우리의 가치" data-en="Our Specialty">Our Specialty</h2>
             <div class="w-16 h-[2px] bg-amber-900/50 mx-auto my-5"></div>
-            <p class="text-stone-900 leading-[2.2] font-bold text-lg md:text-xl">
+            <p class="lang-text text-stone-900 leading-[2.2] font-bold text-lg md:text-xl" 
+               data-ko="남대문의 활기찬 공기 속에서 우리는 정적의 순간을 발견했습니다.<br>경희사는 단순한 물건을 넘어, 시대를 초월한 가치를 전합니다."
+               data-en="In the lively air of Namdaemun, we discovered moments of stillness<br>Kyunghee-sa is not simply about objects— it is about offering timeless values">
                 In the lively air of Namdaemun, we discovered moments of stillness<br>
                 Kyunghee-sa is not simply about objects— <br>
                 it is about offering timeless values that endure beyond passing trends
@@ -116,85 +105,86 @@
 
     <section id="stories" class="py-32 px-6 max-w-6xl mx-auto">
         <div class="text-center mb-20">
-            <h2 class="text-4xl font-serif text-amber-900 mb-4 italic font-bold">Prop Stories</h2>
+            <h2 class="lang-text text-4xl font-serif text-amber-900 mb-4 italic font-bold" data-ko="소품 이야기" data-en="Prop Stories">Prop Stories</h2>
             <div class="w-16 h-[2px] bg-amber-900/40 mx-auto my-5"></div>
-            <p class="text-stone-600 uppercase tracking-widest text-[15px] font-bold">Thoughtfully curated pieces, selected with care</p>
+            <p class="lang-text text-stone-600 uppercase tracking-widest text-[15px] font-bold" data-ko="엄선된 마음을 담은 조각들" data-en="Thoughtfully curated pieces, selected with care">Thoughtfully curated pieces, selected with care</p>
         </div>
 
-        <div id="story-grid" class="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div id="story-grid" class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
             <div class="story-item group">
                 <div class="aspect-[3/4] bg-stone-100 mb-6 overflow-hidden"><img src="img/box.png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"></div>
-                <h3 class="text-xl font-serif italic mb-2 font-bold text-stone-900">Korean mother-of-pearl jewelry box</h3>
-                <p class="text-sm text-stone-600 font-semibold leading-relaxed">A traditional Korean folding fan crafted with elegant artistry, blending heritage, beauty, and timeless charm.</p>
+                <h3 class="lang-text text-xl font-serif italic mb-2 font-bold text-stone-900" data-ko="자개 보석함" data-en="Korean mother-of-pearl jewelry box">Korean mother-of-pearl jewelry box</h3>
+                <p class="lang-text text-sm text-stone-600 font-semibold leading-relaxed" data-ko="전통 장인정신이 담긴 우아한 자개 보석함" data-en="An elegant jewelry box reflecting traditional craftsmanship.">An elegant jewelry box reflecting traditional craftsmanship.</p>
             </div>
             <div class="story-item group">
                 <div class="aspect-[3/4] bg-stone-100 mb-6 overflow-hidden"><img src="img/apron.png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"></div>
-                <h3 class="text-xl font-serif italic mb-2 font-bold text-stone-900">Home life style apron</h3>
-                <p class="text-sm text-stone-600 font-semibold leading-relaxed">Creates an effortlessly aesthetic mood that blends naturally into everyday life.</p>
+                <h3 class="lang-text text-xl font-serif italic mb-2 font-bold text-stone-900" data-ko="라이프스타일 앞치마" data-en="Home life style apron">Home life style apron</h3>
+                <p class="lang-text text-sm text-stone-600 font-semibold leading-relaxed" data-ko="일상의 무드를 더해주는 감각적인 앞치마" data-en="An aesthetic apron that adds mood to your daily life.">An aesthetic apron that adds mood to your daily life.</p>
             </div>
             <div class="story-item group">
                 <div class="aspect-[3/4] bg-stone-100 mb-6 overflow-hidden"><img src="img/magnet.png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"></div>
-                <h3 class="text-xl font-serif italic mb-2 font-bold text-stone-900">Traditional Korean 3D Magnet</h3>
-                <p class="text-sm text-stone-600 font-semibold leading-relaxed">A beautifully crafted 3D magnet featuring iconic Korean cultural elements.</p>
+                <h3 class="lang-text text-xl font-serif italic mb-2 font-bold text-stone-900" data-ko="전통 3D 마그넷" data-en="Traditional Korean 3D Magnet">Traditional Korean 3D Magnet</h3>
+                <p class="lang-text text-sm text-stone-600 font-semibold leading-relaxed" data-ko="한국의 미를 정교하게 담아낸 입체 마그넷" data-en="A detailed 3D magnet capturing Korean beauty.">A detailed 3D magnet capturing Korean beauty.</p>
             </div>
             <div class="story-item hidden-item group">
                 <div class="aspect-[3/4] bg-stone-100 mb-6 overflow-hidden"><img src="img/kiring (3).png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"></div>
-                <h3 class="text-xl font-serif italic mb-2 font-bold text-stone-900">Memory Keyring Collection</h3>
-                <p class="text-sm text-stone-600 font-semibold leading-relaxed">A charming collection capturing the beauty and memories of Korea.</p>
+                <h3 class="lang-text text-xl font-serif italic mb-2 font-bold text-stone-900" data-ko="추억의 키링 컬렉션" data-en="Memory Keyring Collection">Memory Keyring Collection</h3>
+                <p class="lang-text text-sm text-stone-600 font-semibold leading-relaxed" data-ko="한국의 추억을 간직하는 특별한 키링" data-en="A special keyring to keep your Korean memories.">A special keyring to keep your Korean memories.</p>
             </div>
             <div class="story-item hidden-item group">
                 <div class="aspect-[3/4] bg-stone-100 mb-6 overflow-hidden"><img src="img/bts.png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"></div>
-                <h3 class="text-xl font-serif italic mb-2 font-bold text-stone-900">K-Pop BTS Key Ring Souvenir</h3>
-                <p class="text-sm text-stone-600 font-semibold leading-relaxed">A stylish key ring inspired by global K-pop sensation BTS.</p>
+                <h3 class="lang-text text-xl font-serif italic mb-2 font-bold text-stone-900" data-ko="K-Pop BTS 키링" data-en="K-Pop BTS Key Ring Souvenir">K-Pop BTS Key Ring Souvenir</h3>
+                <p class="lang-text text-sm text-stone-600 font-semibold leading-relaxed" data-ko="글로벌 스타 BTS 영감을 담은 기념 키링" data-en="A souvenir keyring inspired by global star BTS.">A souvenir keyring inspired by global star BTS.</p>
             </div>
             <div class="story-item hidden-item group">
                 <div class="aspect-[3/4] bg-stone-100 mb-6 overflow-hidden"><img src="img/bag.png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"></div>
-                <h3 class="text-xl font-serif italic mb-2 font-bold text-stone-900">Korean-style Pouch Handbag</h3>
-                <p class="text-sm text-stone-600 font-semibold leading-relaxed">A traditional Korean-style pouch handbag inspired by Hanbok designs.</p>
+                <h3 class="lang-text text-xl font-serif italic mb-2 font-bold text-stone-900" data-ko="한국식 복주머니 가방" data-en="Korean-style Pouch Handbag">Korean-style Pouch Handbag</h3>
+                <p class="lang-text text-sm text-stone-600 font-semibold leading-relaxed" data-ko="한복의 곡선을 닮은 우아한 파우치 백" data-en="An elegant pouch bag resembling Hanbok curves.">An elegant pouch bag resembling Hanbok curves.</p>
             </div>
             <div class="story-item hidden-item group">
                 <div class="aspect-[3/4] bg-stone-100 mb-6 overflow-hidden"><img src="img/spoon.png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"></div>
-                <h3 class="text-xl font-serif italic mb-2 font-bold text-stone-900">Traditional Korean Dining Set</h3>
-                <p class="text-sm text-stone-600 font-semibold leading-relaxed">A traditional Korean spoon and chopsticks set for everyday dining.</p>
+                <h3 class="lang-text text-xl font-serif italic mb-2 font-bold text-stone-900" data-ko="전통 수저 세트" data-en="Traditional Korean Dining Set">Traditional Korean Dining Set</h3>
+                <p class="lang-text text-sm text-stone-600 font-semibold leading-relaxed" data-ko="한국의 정갈한 식탁을 완성하는 수저 세트" data-en="A dining set for a neat Korean table setting.">A dining set for a neat Korean table setting.</p>
             </div>
             <div class="story-item hidden-item group">
                 <div class="aspect-[3/4] bg-stone-100 mb-6 overflow-hidden"><img src="img/bi.png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"></div>
-                <h3 class="text-xl font-serif italic mb-2 font-bold text-stone-900">Binyeo (Traditional Hairpin)</h3>
-                <p class="text-sm text-stone-600 font-semibold leading-relaxed">An elegant accessory representing Korean beauty and tradition.</p>
+                <h3 class="lang-text text-xl font-serif italic mb-2 font-bold text-stone-900" data-ko="비녀 (전통 비녀)" data-en="Binyeo (Traditional Hairpin)">Binyeo (Traditional Hairpin)</h3>
+                <p class="lang-text text-sm text-stone-600 font-semibold leading-relaxed" data-ko="한국의 고전미를 상징하는 우아한 비녀" data-en="An elegant hairpin symbolizing Korean classic beauty.">An elegant hairpin symbolizing Korean classic beauty.</p>
             </div>
             <div class="story-item hidden-item group">
                 <div class="aspect-[3/4] bg-stone-100 mb-6 overflow-hidden"><img src="img/plate.png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"></div>
-                <h3 class="text-xl font-serif italic mb-2 font-bold text-stone-900">Korean Souvenir Plate</h3>
-                <p class="text-sm text-stone-600 font-semibold leading-relaxed">A decorative plate featuring traditional Korean designs.</p>
+                <h3 class="lang-text text-xl font-serif italic mb-2 font-bold text-stone-900" data-ko="한국 기념 접시" data-en="Korean Souvenir Plate">Korean Souvenir Plate</h3>
+                <p class="lang-text text-sm text-stone-600 font-semibold leading-relaxed" data-ko="한국의 문양을 담은 장식용 기념 접시" data-en="A decorative souvenir plate with Korean patterns.">A decorative souvenir plate with Korean patterns.</p>
             </div>
         </div>
 
         <div class="text-center mt-16">
-            <button id="show-more-btn" onclick="toggleItems()" class="px-10 py-3 border-2 border-stone-800 text-xs uppercase tracking-widest font-bold hover:bg-stone-900 hover:text-white transition-all">Show More</button>
+            <button id="show-more-btn" onclick="toggleItems()" class="lang-text px-10 py-3 border-2 border-stone-800 text-xs uppercase tracking-widest font-bold hover:bg-stone-900 hover:text-white transition-all" 
+                data-ko="더 보기" data-en="Show More">Show More</button>
         </div>
     </section>
 
     <section class="py-32 px-6 bg-[#fdfaf6]">
         <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-20 text-stone-800">
-                <h2 class="text-4xl font-serif mb-4 italic text-center text-amber-900 font-bold">The KYUNG HEE SA Essence</h2>
+            <div class="text-center mb-20">
+                <h2 class="lang-text text-4xl font-serif mb-4 italic text-amber-900 font-bold" data-ko="경희사의 본질" data-en="The KYUNG HEE SA Essence">The KYUNG HEE SA Essence</h2>
                 <div class="w-16 h-[2px] bg-amber-900/40 mx-auto my-5"></div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
                 <div class="text-left group">
                     <span class="text-amber-900/40 font-serif text-7xl mb-4 block font-extrabold group-hover:text-amber-600 transition-colors">01</span>
-                    <h3 class="text-2xl font-serif text-stone-900 mb-4 italic font-bold">Heartfelt Curation</h3>
-                    <p class="text-stone-700 text-sm leading-[1.8] font-semibold">Each item is handpicked with love, focusing on craftsmanship and the emotions it evokes.</p>
+                    <h3 class="lang-text text-2xl font-serif text-stone-900 mb-4 italic font-bold" data-ko="진심 어린 큐레이션" data-en="Heartfelt Curation">Heartfelt Curation</h3>
+                    <p class="lang-text text-stone-700 text-sm leading-[1.8] font-semibold" data-ko="모든 물건은 장인정신과 그 안에 담긴 감정을 생각하며 엄선합니다." data-en="Each item is handpicked with love, focusing on craftsmanship.">Each item is handpicked with love, focusing on craftsmanship and the emotions it evokes.</p>
                 </div>
                 <div class="text-left group">
                     <span class="text-amber-900/40 font-serif text-7xl mb-4 block font-extrabold group-hover:text-amber-600 transition-colors">02</span>
-                    <h3 class="text-2xl font-serif text-stone-900 mb-4 italic font-bold">Warm Sanctuary</h3>
-                    <p class="text-stone-700 text-sm leading-[1.8] font-semibold">Our space is designed to be a refuge where you can breathe slowly and find peace.</p>
+                    <h3 class="lang-text text-2xl font-serif text-stone-900 mb-4 italic font-bold" data-ko="따뜻한 안식처" data-en="Warm Sanctuary">Warm Sanctuary</h3>
+                    <p class="lang-text text-stone-700 text-sm leading-[1.8] font-semibold" data-ko="잠시 숨을 고르고 마음의 평온을 찾을 수 있는 공간을 지향합니다." data-en="Our space is designed to be a refuge where you can find peace.">Our space is designed to be a refuge where you can breathe slowly and find peace.</p>
                 </div>
                 <div class="text-left group">
                     <span class="text-amber-900/40 font-serif text-7xl mb-4 block font-extrabold group-hover:text-amber-600 transition-colors">03</span>
-                    <h3 class="text-2xl font-serif text-stone-900 mb-4 italic font-bold">A Sense of Place</h3>
-                    <p class="text-stone-700 text-sm leading-[1.8] font-semibold">Deeply rooted in history, we blend traditional aesthetics with modern sensibilities.</p>
+                    <h3 class="lang-text text-2xl font-serif text-stone-900 mb-4 italic font-bold" data-ko="장소의 가치" data-en="A Sense of Place">A Sense of Place</h3>
+                    <p class="lang-text text-stone-700 text-sm leading-[1.8] font-semibold" data-ko="전통적인 미학과 현대적인 감각을 조화롭게 잇습니다." data-en="We blend traditional aesthetics with modern sensibilities.">Deeply rooted in history, we blend traditional aesthetics with modern sensibilities.</p>
                 </div>
             </div>
         </div>
@@ -203,25 +193,24 @@
     <section id="visit" class="py-32 bg-stone-100 px-6">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row gap-16 items-center">
             <div class="md:w-1/2">
-                <h2 class="text-4xl font-serif text-amber-900 mb-8 italic font-bold">How to Find Us</h2>
+                <h2 class="lang-text text-4xl font-serif text-amber-900 mb-8 italic font-bold" data-ko="찾아오시는 길" data-en="How to Find Us">How to Find Us</h2>
                 <div class="space-y-6 text-sm text-stone-700 leading-relaxed font-semibold">
                     <p>
-                        <strong class="uppercase tracking-widest text-xs text-stone-400 font-bold">Address</strong> <br> 
-                        1F 5-6, Daedo General Market D-Dong, 9 Namdaemunsijang 4-gil, Jung-gu, Seoul
+                        <strong class="lang-text uppercase tracking-widest text-xs text-stone-400 font-bold" data-ko="주소" data-en="Address">Address</strong> <br> 
+                        <span data-ko="서울시 중구 남대문시장4길 9, 대도종합상가 D동 1층 5-6호" data-en="1F 5-6, Daedo General Market D-Dong, 9 Namdaemunsijang 4-gil, Jung-gu, Seoul">1F 5-6, Daedo General Market D-Dong, 9 Namdaemunsijang 4-gil, Jung-gu, Seoul</span>
                     </p>
                     <p>
-                        <strong class="uppercase tracking-widest text-xs text-stone-400 font-bold">Contact</strong> <br> 
+                        <strong class="lang-text uppercase tracking-widest text-xs text-stone-400 font-bold" data-ko="연락처" data-en="Contact">Contact</strong> <br> 
                         Tel: +82 2-754-8549 | Mobile: +82 10-2783-0547
                     </p>
                     <p>
-                        <strong class="uppercase tracking-widest text-xs text-stone-400 font-bold">Opening Hours</strong> <br> 
-                        Mon — Sat | 9:00 AM — 05:00 PM (Closed on Sundays)
+                        <strong class="lang-text uppercase tracking-widest text-xs text-stone-400 font-bold" data-ko="운영 시간" data-en="Opening Hours">Opening Hours</strong> <br> 
+                        <span class="lang-text" data-ko="월 — 토 | 오전 9:00 — 오후 5:00 (일요일 휴무)" data-en="Mon — Sat | 9:00 AM — 05:00 PM (Closed on Sundays)">Mon — Sat | 9:00 AM — 05:00 PM (Closed on Sundays)</span>
                     </p>
-                    <p class="italic text-amber-800 pt-4 font-bold text-base">"Located inside the warm heart of Namdaemun."</p>
                 </div>
             </div>
-            <div class="md:w-1/2 w-full h-[400px] bg-stone-200 rounded-sm overflow-hidden shadow-inner">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.839841808647!2d126.975416576801!3d37.558836572040924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca2f427f7f9fd%3A0x9597143922f5f9fd!2z64Ko64yA66y47Iuc7J6l!5e0!3m2!1sko!2skr!4v1710000000000!5m2!1sko!2skr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <div class="md:w-1/2 w-full h-[400px] bg-stone-200 rounded-sm overflow-hidden shadow-inner border border-stone-200">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.7745771343717!2d126.97455827641214!3d37.5603774244673!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca2f190e254e3%3A0xb3531398f6a917e!2z64Ko64yA66y47Iuc7J!5e0!3m2!1sko!2skr!4v1710000000000!5m2!1sko!2skr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
     </section>
@@ -232,6 +221,7 @@
     </footer>
 
     <script>
+        // Slider
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slide');
         function nextSlide() {
@@ -241,19 +231,57 @@
         }
         setInterval(nextSlide, 4500);
 
+        // Show More/Less with Language awareness
         function toggleItems() {
             const hiddenItems = document.querySelectorAll('.hidden-item');
             const btn = document.getElementById('show-more-btn');
+            const currentLang = localStorage.getItem('khs-lang') || 'en';
+            
+            let isShowing = false;
             hiddenItems.forEach(item => {
                 if (item.style.display === 'block') {
                     item.style.display = 'none';
-                    btn.innerText = 'Show More';
                 } else {
                     item.style.display = 'block';
-                    btn.innerText = 'Show Less';
+                    isShowing = true;
                 }
             });
+
+            if (isShowing) {
+                btn.innerText = (currentLang === 'ko') ? '줄이기' : 'Show Less';
+            } else {
+                btn.innerText = (currentLang === 'ko') ? '더 보기' : 'Show More';
+            }
         }
+
+        // Language Switch
+        function setLanguage(lang) {
+            const elements = document.querySelectorAll('.lang-text');
+            elements.forEach(el => {
+                const text = el.getAttribute('data-' + lang);
+                if(text) el.innerHTML = text;
+            });
+
+            const btnKo = document.getElementById('btn-ko');
+            const btnEn = document.getElementById('btn-en');
+            const showMoreBtn = document.getElementById('show-more-btn');
+
+            if (lang === 'ko') {
+                btnKo.className = "px-3 py-1 bg-amber-900 text-white transition-all";
+                btnEn.className = "px-3 py-1 bg-stone-100 text-stone-400 transition-all";
+                if(showMoreBtn.innerText !== '줄이기' && showMoreBtn.innerText !== 'Show Less') showMoreBtn.innerText = '더 보기';
+            } else {
+                btnEn.className = "px-3 py-1 bg-amber-900 text-white transition-all";
+                btnKo.className = "px-3 py-1 bg-stone-100 text-stone-400 transition-all";
+                if(showMoreBtn.innerText !== '줄이기' && showMoreBtn.innerText !== 'Show Less') showMoreBtn.innerText = 'Show More';
+            }
+            localStorage.setItem('khs-lang', lang);
+        }
+
+        window.onload = () => {
+            const savedLang = localStorage.getItem('khs-lang') || 'en';
+            setLanguage(savedLang);
+        };
     </script>
 </body>
 </html>
